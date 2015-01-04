@@ -1,5 +1,5 @@
 {
-  "name": "grunt-tmod",
+  "name": "ifanrx-grunt-tmod",
   "description": "the grunt plugin for tmodjs",
   "version": "0.2.0",
   "homepage": "https://github.com/jsonzhang/grunt-tmodjs",
@@ -28,14 +28,13 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "tmodjs": "*"
+    "tmodjs": "git://github.com/ifanrx/tmodjs.git"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt": "~0.4.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"

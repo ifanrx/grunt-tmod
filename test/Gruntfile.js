@@ -12,21 +12,25 @@ module.exports = function(grunt){
 
     grunt.initConfig({
         tmod: {
-            template: {
-                src: './tpl/**/*.html',
-                dest: './dist/template.js',
+            options: {
+                "output": "./dist",
+                "charset": "utf-8",
+                "syntax": "native",
+                "escape": true,
+                "engine": false,
+                "alias": null,
+                "minify": false,
+                "type": "amd",
+                base: './tpl/' // template('tpl/index/main') >>> template('index/main')
+            },
+            dev: {
                 options: {
-                    base: './tpl/', // template('tpl/index/main') >>> template('index/main')
-                    combo: true
-                } 
-            }
-        },
-        watch: {
-            template: {
-                files: '<%=tmod.template.src%>',
-                tasks: ['tmod'],
+                    "minify": false
+                }
+            },
+            dist: {
                 options: {
-                    spawn: false
+                    "minify": true
                 }
             }
         }
@@ -35,9 +39,7 @@ module.exports = function(grunt){
 
     //grunt.loadNpmTasks('grunt-tmod');
     require('../tasks/tmod.js')(grunt);
-    //grunt.loadNpmTasks('grunt-contrib-watch');
-    require('../node_modules/grunt-contrib-watch/tasks/watch.js')(grunt);
 
-    grunt.registerTask('default', ['tmod', 'watch']);
+    grunt.registerTask('default', ['tmod']);
 
 };
