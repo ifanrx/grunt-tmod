@@ -1,8 +1,9 @@
 /*
  * grunt-tmod
- * https://github.com/jsonzhang/grunt-tmodjs
+ * base on Json's https://github.com/jsonzhang/grunt-tmodjs
  *
- * Copyright (c) 2013 Json
+ * @author jfxiao07
+ *
  * Licensed under the MIT license.
  */
 
@@ -27,6 +28,12 @@ module.exports = function(grunt) {
     // return
     TmodJS.init(base, options);
     TmodJS.compile();
+
+    // watch not supportted yet.
+    return
+    if(options.watch) {
+      TmodJS.watch()
+    }
 
   });
 };
